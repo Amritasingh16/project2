@@ -74,7 +74,7 @@ export default function RightSection({
     const [isLoading, setIsLoading] = useState(false)
 
     const {
-        interests,
+        interns:interests,
         name:collegeName,
         fullName
     } = collegeDetails
