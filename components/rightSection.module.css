@@ -1,0 +1,246 @@
+.rightSection {
+    width: 50vw;
+    height: 100vh;
+    padding-left: 43px;
+    overflow-y: scroll;
+  }
+
+  .intro_text{
+    font-size: 1.25rem;
+    margin-right:5rem;
+    font-weight: 500;
+  }
+
+  .internToggleBtnContainer {
+    border: 1px solid #DFE9EF;
+    border-radius: 16px;
+    display: flex;
+    padding: 10px;
+    height: 94px;
+    width: 80%;
+    position: relative;
+    align-self: flex-start;
+  }
+  
+  .toggleBtn {
+    display: flex;
+    font-size: 1.25rem;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    font-family: Gilroy;
+    font-weight: bold;
+    z-index: 2;
+    transition: color .5s ease-out;
+    /* border: 1px solid #DFE9EF; */
+  }
+  
+  .selectedToggleBtn {
+    border-radius: 16px;
+    height: 4.6rem;
+    background-color: black;
+    position: absolute;
+    width: 48%;
+    transition: transform .5s ease-out;
+  }
+
+  .selectedToggleBtnRight {
+    transform: translate(100%, 0);
+  }
+
+  .selectedToggleBtnLeft {
+    transform: translate(0%, 0);
+  }
+  
+  .whiteText {
+    color: white;
+  }
+
+  .inputContainer {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #DFE9EF;
+    border-radius: 16px;
+    margin-right: 5em;
+
+  }
+  
+  .inputBox {
+    border-bottom: 1px solid #DFE9EF;
+    font-size: 1.25rem;
+    height: 5rem;
+    padding-left: 1.5rem;
+    /* background-color: #FF2231; */
+    width:100%;
+    font-family: Gilroy;
+    font-weight: bold;
+    /* width: max-content; */
+    /* display: flex;
+    flex: 1; */
+  }
+  
+  .formElementContainer:last-child .inputBox {
+    border: 0px;
+    /* cursor: pointer; */
+  }
+
+  .formElementContainer {
+      position: relative;
+  }
+
+  .inputBox[type=file] {
+      visibility: hidden;
+  }
+  
+  .labelBox {
+      position: absolute;
+      font-family: Gilroy;
+      font-weight: bold;
+      /* color: #caccdd; */
+      font-size: 1.25rem;
+        padding-left: 1.5rem;
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        top: 0%;
+  }
+
+
+  .inputBox::placeholder {
+    font-family: Gilroy;
+    font-weight: bold;
+    color: #caccdd;
+    font-size: 1.25rem;
+  }
+  
+  .applyBtn {
+    height: 4rem;
+    background: #FF2231;
+    border-radius: 8px;
+    font-size: 1.25rem;
+    color: white;
+    font-family: Gilroy;
+    font-weight: bold;
+    padding: 1.25rem 2rem;
+    align-self: flex-start;
+  }
+  
+  .companyContainer {
+    display: flex;
+    /* flex-direction: row; */
+  }
+
+
+  .interestContainer {
+      max-height: 316px;
+      background: #EAF3FA;
+        border-radius: 8px;
+        overflow-y: scroll;
+        padding: 1.25rem 1.5rem;
+        margin-right: 5rem;
+    /* display: grid; */
+
+  }
+
+  .interestRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* align-content: baseline; */
+    flex-direction: row;
+    flex:1;
+    /* background-color: #FF2231; */
+    height: 2.2rem;
+    /* border: 1px solid #DFE9EF; */
+    margin-bottom: 1rem;
+}
+.interestRow:last-child {
+  margin-bottom: 0rem;
+}
+
+.rowItemHeading {
+    color: #506D85;
+    letter-spacing: 2px;
+    font-size: .75rem;
+    font-weight: 500;
+}
+
+@media screen and (max-width: 420px)  {
+  .rightSection{
+    width: 100vw;
+    height: 100%;
+    padding-left: 1.25rem;
+    overflow-y: hidden;
+  }
+  
+  .intro_text{
+    font-size: 1rem;
+    line-height: 1.5rem;
+    margin-right: 1rem;
+    /* margin-right:'5rem' */
+  }
+
+  .internToggleBtnContainer {
+    height: 74px;
+    border-radius: 4px;
+  }
+
+  .toggleBtn {
+    font-size: .87rem;
+    line-height: 1rem;
+  }
+
+  .selectedToggleBtn {
+    height: 3.2rem;
+    /* height: calc(74px - 20px); */
+    border-radius: 4px;
+    width: 46%;
+    /* top: 0px; */
+  }
+
+  .inputContainer {
+    margin-right: 1em;
+
+  }
+
+  .inputBox::placeholder {
+    font-size: 1rem;
+  }
+
+  .applyBtn {
+    font-size: 1rem;
+  }
+
+  .interestContainer {
+    overflow-x: scroll;
+      margin-right: 1rem;
+
+}
+
+  .interestRow {
+    font-size: .87rem;
+  }
+
+  /* .selectedToggleBtn, .right{
+    height: 3.25rem;
+    border-radius: 0.25rem;
+    padding: 1.6rem;
+  }
+
+  .internToggleBtnContainer{
+    border-radius: 0.25rem;
+    width: 82%;
+  }
+
+  .inputContainer, .interestContainer{
+    margin-right:1.25em;
+  } */
+
+}
+
+@media (min-width: 421px) and (max-width: 1400px) {
+  .copyrightText{
+    display: none;
+  }
+}

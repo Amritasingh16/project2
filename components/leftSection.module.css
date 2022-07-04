@@ -1,0 +1,68 @@
+.leftSection {
+    width: 50vw;
+    background-color: #2727AD;
+    padding-left: 4rem;
+    /* align-items: center; */
+    color: white;
+  }
+
+.companyNameContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+}
+
+.descHeading{
+  font-size:3.75rem;
+  line-height:4.4rem;
+   letter-spacing:-1px
+}
+
+.copyrightText{
+  align-self: flex-end;
+  margin-right:1.7rem; 
+  font-size:.87rem ;
+  font-weight:500;
+}
+
+.collegeName{
+  font-size: 1.5rem;
+  line-height: 1.3rem;
+}
+
+.collegeCity {
+  font-size: 1rem;
+}
+
+/* .studentImage {
+  width:  calc(442 * scaleFactor);
+  height: 419 * scaleFactor;
+} */
+
+@media screen and (max-width: 420px)  {
+  .leftSection {
+    width: 100vw;
+    padding-left: 1.25rem;
+    /* height: 100vh; */
+  }
+
+  .collegeName{
+    font-size: 1rem;
+    line-height: .9rem;
+  }
+  .collegeCity {
+    font-size: .8rem;
+  }
+  .descHeading{
+    font-size:1.75rem;
+    line-height:2rem;
+  }
+  /* .copyrightText{
+    position: absolute;
+    bottom: 0;
+  } */
+  .hideCopyRightText{
+    display: none;
+  }
+
+}
