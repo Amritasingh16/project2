@@ -51,7 +51,7 @@ export default function Home() {
       
       setCollegeDetails(val.data)
     } catch (error) {
-        // console.log({fetchCollegeDetailsError:error})
+        
     } finally {
         // setIsLoading(false)
     }
