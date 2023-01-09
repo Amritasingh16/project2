@@ -1,5 +1,4 @@
 const mongoose=require("mongoose");
-const email=require("mongoose-type-email")
 const ObjectId=mongoose.Schema.Types.ObjectId;
 const internSchema=new mongoose.Schema(
     {
@@ -9,9 +8,8 @@ name:{
     lowercase:true
 },
 email:{
-    type:email,
-    required:true,
-    unique:true
+    type:String,
+    required:true
 },
 mobile:{
     type:Number,
