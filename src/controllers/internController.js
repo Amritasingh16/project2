@@ -1,6 +1,5 @@
 const InternModel= require("../models/intern")
 const CollegeModel= require("../models/college")
-//const emailValidation=require("email-validator")
 
 let nameRegex=/^[a-z A-Z]{3,}$/
  let mobileRegex= /^[6-9]\d{9}$/
