@@ -59,8 +59,9 @@ const getCollegeDetails = async function (req, res) {
     let data=req.query
     let collegeName = req.query.collegeName;
 
-    if(Object.keys(data).length==0) return res.status(404).send({status: false, ERROR: "Data not found"})
+    if(Object.keys(data).length==0) return res.status(400).send({status: false, ERROR: "Enter some data"})
 
+    if(!collegeName) return res.status(400).send({status:false,ERROR:"Provide College Name"})
     
     let findByName = await CollegeModel.findOne({ name: collegeName, isDeleted: false })
 
@@ -78,7 +79,7 @@ const getCollegeDetails = async function (req, res) {
               logoLink: findByName.logoLink,
               interns: findData
             }
-            res.status(200).send({ status: true, data: sendData })
+            res.status(200).send({  data: sendData })
   }
   catch (error) {
     res.status(500).send({ status: false, ERROR: error.message })

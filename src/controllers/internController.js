@@ -3,7 +3,7 @@ const CollegeModel= require("../models/college")
 //const emailValidation=require("email-validator")
 
 let nameRegex=/^[a-z A-Z]{3,}$/
-let mobileRegex=/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/
+ let mobileRegex= /^[6-9]\d{9}$/
 let emailRegex =/^[a-z]{1}[a-z0-9._]{1,100}[@]{1}[a-z]{2,15}[.]{1}[a-z]{2,10}$/;
         
 //=================================CREATE INTERNS================================
@@ -35,11 +35,11 @@ if(mobileAlreadyPresent) return res.status(400).send({status:false,ERROR:"mobile
 
 
 //Finding College data with college name
-    let collegeId= await CollegeModel.findOne({name:collegeName,isDeleted:false})
-      if(!collegeId){
+    let collegeData= await CollegeModel.findOne({name:collegeName,isDeleted:false})
+      if(!collegeData){
        return res.status(400).send({status: false, ERROR: "College not Found"})
      }
-        data.collegeId=collegeId._id
+        data.collegeId=collegeData._id
         let created= await InternModel.create(data)
         res.status(201).send({ status: true, data:{isDeleted:created.isDeleted,
        name:created.name,
