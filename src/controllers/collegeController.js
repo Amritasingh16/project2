@@ -5,7 +5,7 @@ const { findOne } = require("../models/college")
 
 //==============================CREATING COLLEGE===============================
 let nameRegex = /^[a-z]{3,}$/
-let fullNameRegex= /^[a-zA-Z]*$/
+let fullNameRegex= /^[a-z A-Z]*$/
 
 const createCollege = async function (req, res) {
   try {
@@ -24,7 +24,7 @@ const createCollege = async function (req, res) {
 
   //fullName validation-------------------------------------
   if (!fullName) return res.status(400).send({ status: false,ERROR: "Fullname is required" });
-  if(!fullName.match(fullNameRegex)) return res.status(400).send({ status: false,ERROR: "Fullname must contain no space and minimum 3 letters" });
+  if(!fullName.match(fullNameRegex)) return res.status(400).send({ status: false,ERROR: "Fullname must contain minimum 3 letters" });
 
 
   // logoLink validation------------------------------------
