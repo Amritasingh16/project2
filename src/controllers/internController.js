@@ -11,32 +11,33 @@ const createIntern= async function(req,res){
     let data= req.body
 const {name,email,mobile,collegeName}=data
 
-if(Object.keys(data).length==0) return res.status(404).send({status:false, ERROR: "Data required"})
+if(Object.keys(data).length==0) return res.status(404).send({status:false, message: "Data required"})
 
 
 //name validation----------------------------------------
 if(!name) return res.status(400).send({status:false,message:"Name is Required"})
-if(!name.match(nameRegex)) return res.status(400).send({status:false, ERROR:"Name is not valid"})
+if(!name.match(nameRegex)) return res.status(400).send({status:false, message:"Name is not valid"})
 
 
 //email validation---------------------------------------
-if(!email)  return res.status(400).send({status:false, ERROR:"email is Required"})
-if(!email.match(emailRegex)) return res.status(400).send({status:false, ERROR:"email is invalid"})
+if(!email)  return res.status(400).send({status:false, message:"email is Required"})
+if(!email.match(emailRegex)) return res.status(400).send({status:false, message:"email is invalid"})
 let emailAlreadyPresent=await InternModel.findOne({email:email})
-if(emailAlreadyPresent) return res.status(400).send({status:false, ERROR:"email already present"})
+if(emailAlreadyPresent) return res.status(400).send({status:false, message:"email already present"})
 
 
 //mobile number validation-------------------------------
-if(!mobile) return res.status(400).send({status:false,ERROR:"mobile is Required"})
-if(!mobile.match(mobileRegex)) return res.status(400).send({status:false,ERROR:"mobile number is invalid"})
+if(!mobile) return res.status(400).send({status:false,message:"mobile is Required"})
+if(!mobile.match(mobileRegex)) return res.status(400).send({status:false,message:"mobile number is invalid"})
 let mobileAlreadyPresent=await InternModel.findOne({mobile:mobile})
-if(mobileAlreadyPresent) return res.status(400).send({status:false,ERROR:"mobile number already present"}) 
+if(mobileAlreadyPresent) return res.status(400).send({status:false,message:"mobile number already present"})
+
 
 
 //Finding College data with college name
     let collegeData= await CollegeModel.findOne({name:collegeName,isDeleted:false})
       if(!collegeData){
-       return res.status(400).send({status: false, ERROR: "College not Found"})
+       return res.status(400).send({status: false, message: "College not Found"})
      }
         data.collegeId=collegeData._id
         let created= await InternModel.create(data)
@@ -44,7 +45,7 @@ if(mobileAlreadyPresent) return res.status(400).send({status:false,ERROR:"mobile
        name:created.name,
        email:created.email,
        mobile:created.mobile,
-       collegeId:created.collegeId}})
+       coeglleId:created.collegeId}})
     
    }catch(error){
     res.status(500).send({ status: false, ERROR: error.message })
@@ -55,3 +56,5 @@ if(mobileAlreadyPresent) return res.status(400).send({status:false,ERROR:"mobile
 
 
 module.exports.createIntern=createIntern
+
+
