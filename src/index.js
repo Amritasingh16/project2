@@ -16,6 +16,6 @@ mongoose.connect("mongodb+srv://AmritaSingh:AAsingh1627@cluster016.jdmspyj.mongo
 app.use("/",route)
 
 //CONNECTING WITH THE SERVER----------------------------------------
-app.listen(PORT||3000,()=>{
-    console.log(`Server is running on port ${process.env.PORT||3000}`)
+app.listen(process.env.PORT||3001,()=>{
+    console.log(`Server is running on port ${process.env.PORT||3001}`)
 });
