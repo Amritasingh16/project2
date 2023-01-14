@@ -4,7 +4,7 @@ const route=require("./routes/route");
 const app=express();
 
 app.use(express.json());
-app.use(express.urlencoded({extended:true}));
+
 
 //CONNECTING WITH THE MONGODB-----------------------------------
 mongoose.set('strictQuery', true);
@@ -16,6 +16,6 @@ mongoose.connect("mongodb+srv://AmritaSingh:AAsingh1627@cluster016.jdmspyj.mongo
 app.use("/",route)
 
 //CONNECTING WITH THE SERVER----------------------------------------
-app.listen(process.env.PORT||3000,()=>{
+app.listen(PORT||3000,()=>{
     console.log(`Server is running on port ${process.env.PORT||3000}`)
 });

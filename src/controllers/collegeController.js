@@ -90,3 +90,4 @@ const getCollegeDetails = async function (req, res) {
 
 module.exports.createCollege = createCollege
 module.exports.getCollegeDetails = getCollegeDetails
+
